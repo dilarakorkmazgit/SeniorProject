@@ -42,7 +42,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         //Adding different scrolview Page
         
         //pageControl.numberOfPages = colorRange.count
-        pageControl.numberOfPages = logoImage.count
+       // pageControl.numberOfPages = logoImage.count
         
        // for index in 0..<logoImage.count {
             

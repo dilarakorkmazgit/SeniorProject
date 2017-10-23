@@ -29,8 +29,8 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func loginPressed(_ sender: Any) {
-        
         if let email = emailField.text, let password = passwordField.text {
             
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
@@ -44,10 +44,16 @@ class LoginVC: UIViewController {
                     print(firebaseError.localizedDescription)
                     return
                 }
+                
                 self.performSegue(withIdentifier: "LoggedInVC", sender: nil)
-
+                
+                
+                
             }
         }
+
     }
+    
+    
     
 }

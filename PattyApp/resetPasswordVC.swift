@@ -27,29 +27,27 @@ class resetPasswordVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func resetPressed(_ sender: Any) {
         
         if let email = emailField.text {
             
             Auth.auth().sendPasswordReset(withEmail: email) { error in
-               
-                    let dialog = UIAlertController(title: "E-posta Gönderildi", message: "\(email) hesabına yeniden girebilmeni sağlayacak bir bağlantı içeren e-posta gönderdik", preferredStyle: UIAlertControllerStyle.alert)
-                    dialog.addAction(UIAlertAction(title: "TAMAM", style: UIAlertActionStyle.default, handler: nil))
-                    DispatchQueue.main.async(execute: {
-                        self.present(dialog, animated: true, completion: nil)
-                    })
                 
-
+                let dialog = UIAlertController(title: "E-posta Gönderildi", message: "\(email) hesabına yeniden girebilmeni sağlayacak bir bağlantı içeren e-posta gönderdik", preferredStyle: UIAlertControllerStyle.alert)
+                dialog.addAction(UIAlertAction(title: "TAMAM", style: UIAlertActionStyle.default, handler: nil))
+                DispatchQueue.main.async(execute: {
+                    self.present(dialog, animated: true, completion: nil)
+                })
+                
+                
                 
             }
             
             
         }
-        
-        
-        
+
     }
 
+   
 
 }
