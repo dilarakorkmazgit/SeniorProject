@@ -18,7 +18,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     
   
 
-    var colorRange :[UIColor] = [UIColor.red,UIColor.yellow,UIColor.blue,UIColor.purple]
+    var colorRange :[UIColor] = [UIColor.white,UIColor.white,UIColor.white,UIColor.white]
     
     var frame = CGRect(x:0,y:0,width:0,height:0)
     
@@ -49,17 +49,16 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         //    frame.origin.x = ScrollView.frame.size.width * CGFloat(index)
           //  frame.size = ScrollView.frame.size
             
-           // let view = UIView(frame:frame)
-           // view.backgroundColor = logoImage[index]
-           // self.ScrollView.addSubview(view)
-       // }
+            frame.origin.x = self.ScrollView.frame.size.width * CGFloat(index)
+            frame.size = self.ScrollView.frame.size
+            self.ScrollView.isPagingEnabled = true
+            let subview = UIImageView(frame: frame)
+            subview.image = logoImage[index]
+            self.ScrollView.addSubview(subview)
+        }
+
         
-        
-        
-        
-        
-        ScrollView.contentSize = CGSize(width:(ScrollView.frame.size.width * CGFloat(colorRange.count)),height :ScrollView.frame.size.height)
-        
+        ScrollView.contentSize = CGSize(width:(ScrollView.frame.size.width * CGFloat(logoImage.count)),height :ScrollView.frame.size.height)
         ScrollView.delegate = self
         
         //ŞİMDİLİK VİDEOYU COMMENTE ALDIM SONRA BAKARIz
