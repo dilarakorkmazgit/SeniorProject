@@ -16,11 +16,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     
     
-    var logoImage: [UIImage] = [
-        UIImage(named: "hosgeldiniz.png")!,
-        UIImage(named: "bildirimler.png")!,
-        UIImage(named: "kesfet.png")!
-    ]
+  
 
     var colorRange :[UIColor] = [UIColor.red,UIColor.yellow,UIColor.blue,UIColor.purple]
     
